@@ -72,13 +72,13 @@ header.textContent = quote.category;
 const para = document.createElement('p');
 para.textContent = quote.text;
 
-quoteDisplay.append(header);
-quoteDisplay.append(para);
+quoteDisplay.appendChild(header);
+quoteDisplay.appendChild(para);
 }
 
 function addQuote(){
     if (newQuoteText.value === "" || newQuoteTextCategory.value === ""){
-        alert("complete the input");
+        alert("scomplete the input");
         return;
     }
 
