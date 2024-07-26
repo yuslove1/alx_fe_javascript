@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function (){
 const randomNum = (obj) => Math.floor(Math.random() * obj.length)
 
 
-function showRandomQuote (){
+function displayRandomQuote (){
 
 quoteDisplay.textContent = ""; //reset the display back to empty
 const quote = quotes[randomNum(quotes)] //get a random quote from quotes using my random functio
@@ -95,7 +95,7 @@ function addQuote(){
 }
 
 addNewQuoteBtn.addEventListener('click', addQuote);
-RandQuoteBtn.addEventListener('click', showRandomQuote); //when click newQuoteBtn button call function showRandomQuote
+RandQuoteBtn.addEventListener('click', displayRandomQuote); //when click newQuoteBtn button call function showRandomQuote
 
 
 
