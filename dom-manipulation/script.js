@@ -83,12 +83,12 @@ function addQuote(){
     }
 
     //get input value from input and turn it into a object then save it into newQuote
-    const newQuote = {
+    const creatAddQuoteForm = {
         text : newQuoteText.value,
         category : newQuoteTextCategory.value
     }
-    quotes.push(newQuote);
-    alert(`${newQuote.text} added to quotes array`);
+    quotes.push(creatAddQuoteForm);
+    alert(`added to quotes array`);
     newQuoteText.value = "";
     newQuoteTextCategory.value = "";
 
