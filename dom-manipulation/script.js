@@ -63,7 +63,7 @@ const randomNum = (obj) => Math.floor(Math.random() * obj.length)
 
 function displayRandomQuote (){
 
-quoteDisplay.textContent = ""; //reset the display back to empty
+quoteDisplay.innerHTML = ""; //reset the display back to empty
 const quote = quotes[randomNum(quotes)] //get a random quote from quotes using my random functio
 
 const header = document.createElement('h2')
