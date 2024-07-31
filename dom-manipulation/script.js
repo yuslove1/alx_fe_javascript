@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
             category: "Inspirational"
         }
     ];
+
+
     const storageQuotes = loadFromLocal() 
     if (!storageQuotes){
         saveToLocal(quotes)
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const newQuoteText = document.getElementById('newQuoteText');
     const newQuoteCategory = document.getElementById('newQuoteCategory');
     const addNewQuoteBtn = document.getElementById('addQuoteBtn');
-    const exportJsonBtn = document.getElementById('exportJson')
+    const exportQuotes = document.getElementById('exportJson')
     const importJson = document.getElementById('importFile');
 
     // this function returns random number from 1 to length of object passed to the it
@@ -174,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return storedQuote;
     }
 
-    function exportJson() {
+    function exportToJsonFile() {
         const jsonFile = localStorage.getItem("quoteKey") //retrieve quotes in the lS 
         if (!jsonFile) {
             alert("No quote found in the localStorage");
@@ -193,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addNewQuoteBtn.addEventListener('click', addQuote);
     RandQuoteBtn.addEventListener('click', displayRandomQuote); //when click newQuoteBtn button call function showRandomQuote
-    exportJsonBtn.addEventListener('click', exportJson);
+    exportQuotes.addEventListener('click', exportToJsonFile);
     importJson.addEventListener('change', importFromJsonFile);
 
     // quotes = loadFromLocal()
