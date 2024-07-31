@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Quote Generator</title>
+    <style>
+      .head{
+        color: blueviolet;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+    </style>
   </head>
   <body>
-    <h1>Dynamic Quote Generator</h1>
+<div class="head">
+  <h1> Dynamic Quote Generator</h1>
+   <a href="" id="exportJson">Export All Quote</a>
+</div>
+ 
     <div>
         <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
         <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
     <button id="addQuoteBtn">Add Quote</button>
+
+    <input type="file" id="importFile" accept=".json"/>
       </div>
 <hr>
     <div id="quoteDisplay"></div>
@@ -20,3 +35,51 @@
     <script src="script.js"></script>
   </body>
   </html>
+
+
+
+<!-- // {
+//     text: "In the end, it's not the years in your life that count. It's the life in your years.",
+//     category: "Life"
+// },
+// {
+//     text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+//     category: "Motivational"
+// },
+// {
+//     text: "Life is what happens when you're busy making other plans.",
+//     category: "Life"
+// } -->
+
+
+<!-- function addQuote(newQuo) {
+  let createAddQuoteForm;
+  if (newQuo) {
+      createAddQuoteForm = {
+          text: newQuo.text || "No quote provide",
+          category: newQuo.category || "No category provide"
+      }
+      console.log(createAddQuoteForm)
+
+  } else {
+      if (newQuoteText.value === "" || newQuoteCategory.value === "") {
+          alert("kindly, complete the input");
+          return;
+      }
+      //get input value from input and turn it into a object then save it into newQuote
+      createAddQuoteForm = {
+          text: newQuoteText.value,
+          category: newQuoteCategory.value
+      }
+      console.log(createAddQuoteForm)
+  }
+  quotes = loadFromLocal(); //retrieve the quotes in the memory and save the value back into the array
+  quotes.push(createAddQuoteForm); //pass the new input value into the quotes got feom the memory
+  saveToLocal(quotes); //then update the local memory 
+
+  alert(`added to quotes array`);
+
+  // clear input field
+  // newQuoteText.value = "";
+  // newQuoteCategory.value = "";
+} -->
