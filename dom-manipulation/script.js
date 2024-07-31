@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const blob = new Blob([jsonFile], { type: 'application/json' }) //create blob object and pass our retrieve data into it
 
-        exportJsonBtn.href = URL.createObjectURL(blob); //created url that point to the object and attribut to the button
-        exportJsonBtn.download = "Quote.json"; //set the file name
+        exportQuotes.href = URL.createObjectURL(blob); //created url that point to the object and attribut to the button
+        exportQuotes.download = "Quote.json"; //set the file name
         //    exportJsonBtn.remove() //this remove link created by blob in the meemory
     }
 
