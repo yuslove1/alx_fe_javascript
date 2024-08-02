@@ -102,12 +102,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // quoteDisplay.appendChild(para);
 
         quoteDisplay.innerHTML = ""; //reset the display back to empty
-        const lastSelectedQuotes = JSON.parse(localStorage.getItem("lastQuotes") || '[]')
-        quotes = lastSelectedQuotes;
+        const lastSelectedQuotes = JSON.parse(localStorage.getItem("lastQuotes") || '[]') //retrieve last filtered quotes 
+        quotes = lastSelectedQuotes;  //save the last filtered quote into the quote array
         const quote = quotes[randomNum(quotes)] //get a random quote from quotes using my random function
-        saveToSession(quote);
+        saveToSession(quote); //save one random quote into session
 
-        const sessionQuote = loadFromSession();
+        const sessionQuote = loadFromSession(); 
 
         const header = document.createElement('h2')
         header.textContent = sessionQuote.category;
@@ -242,11 +242,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function filterQuotes(event) {
         selectValue = event.target.value;
         localStorage.setItem("lastCategory", (selectValue)); //save the selected value into lacalStorage
-        const exitingQuotes = JSON.parse(localStorage.getItem("quotesKey") || '[]');
+        const selectedCategory = JSON.parse(localStorage.getItem("quotesKey") || '[]');
         if (selectValue === "all" || "") {
-            quotes = exitingQuotes;
+            quotes = selectedCategory;
         } else {
-            quotes = exitingQuotes.filter(filterQuote => filterQuote.category.includes(selectValue));   
+            quotes = selectedCategory.filter(filterQuote => filterQuote.category.includes(selectValue));   
         }
         localStorage.setItem("lastQuotes", JSON.stringify(quotes));
     }
