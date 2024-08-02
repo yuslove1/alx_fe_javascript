@@ -1,37 +1,50 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Quote Generator</title>
-    <style>
-      .head{
-        color: blueviolet;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-    </style>
-  </head>
-  <body>
-<div class="head">
-  <h1> Dynamic Quote Generator</h1>
-   <button><a href="" id="exportJson">Export Quotes</a></button>
-</div>
- 
-    <div>
-        <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-        <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quote Generator</title>
+  <style>
+    .head {
+      color: blueviolet;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .showQuote{
+      margin-top: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <h1> Dynamic Quote Generator</h1>
+    <button><a href="" id="exportJson">Export Quotes</a></button>
+  </div>
+
+  <div>
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
     <button id="addQuoteBtn">Add Quote</button>
 
-    <input type="file" id="importFile" accept=".json"/>
-      </div>
-<hr>
+    <input type="file" id="importFile" accept=".json" />
+  </div>
+  <div class="showQuote">
+    <hr>
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+
+      <!-- Dynamically populated categories -->
+    </select>
+
     <div id="quoteDisplay"></div>
     <button id="newQuote">Show New Quote</button>
+  </div>
 
+  <script src="script.js"></script>
+</body>
 
-    <script src="script.js"></script>
-  </body>
-  </html>
+</html>
